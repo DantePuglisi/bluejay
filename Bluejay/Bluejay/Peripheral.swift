@@ -56,11 +56,6 @@ class Peripheral: NSObject {
     public var identifier: PeripheralIdentifier {
         return PeripheralIdentifier(uuid: cbPeripheral.identifier, name: cbPeripheral.name)
     }
-    
-    /// This peripheral's discovered services.
-    public var services: [CBService]? {
-        return cbPeripheral.services
-    }
 
     // MARK: - Operations
 
