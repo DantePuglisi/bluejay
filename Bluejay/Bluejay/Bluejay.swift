@@ -40,9 +40,6 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     /// Reference to a peripheral that is still connecting. If this is nil, then the peripheral should either be disconnected or connected. This is used to help determine the state of the peripheral's connection.
     private var connectingPeripheral: Peripheral?
 
-    /// Reference to a peripheral that is connected. If this is nil, then the peripheral should either be disconnected or still connecting. This is used to help determine the state of the peripheral's connection.
-    var connectedPeripheral: Peripheral?
-
     /// The previous connection timeout used.
     private var previousConnectionTimeout: Timeout?
 
@@ -112,6 +109,9 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     /// Helps distinguish one Bluejay instance from another.
     public let uuid = UUID()
 
+    /// Reference to a peripheral that is connected. If this is nil, then the peripheral should either be disconnected or still connecting. This is used to help determine the state of the peripheral's connection.
+    public var connectedPeripheral: Peripheral?
+    
     /// Allows checking whether Bluetooth is powered on. Also returns false if Bluejay is not started yet.
     public var isBluetoothAvailable: Bool {
         if cbCentralManager == nil {
