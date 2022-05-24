@@ -12,7 +12,7 @@ import Foundation
 /**
  An interface to the Bluetooth peripheral.
  */
-public class Peripheral: NSObject {
+class Peripheral: NSObject {
 
     // MARK: Properties
 
