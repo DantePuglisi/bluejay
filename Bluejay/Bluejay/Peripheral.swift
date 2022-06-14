@@ -17,7 +17,7 @@ public class Peripheral: NSObject {
     // MARK: Properties
 
     private(set) weak var delegate: PeripheralDelegate!
-    private(set) var cbPeripheral: CBPeripheral!
+    public private(set) var cbPeripheral: CBPeripheral!
 
     private var listeners: [CharacteristicIdentifier: (ListenCallback?, MultipleListenOption)] = [:]
 
